@@ -9,15 +9,14 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let user of users | async" (click)="itemTapped($event, user)">
-      
+    <ion-item>
       {{user.firstName}}
-      <div class="item-note" item-right>
+      <div class="item-note">
         {{user.lastName}}
       </div>
-    </button>
+    </ion-item>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+  <div padding>
+    You navigated here from UserList
   </div>
 </ion-content>

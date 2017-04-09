@@ -8,14 +8,22 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { UserService } from '../services/user/user.service';
+import { HttpModule } from '@angular/http';
+import { EnvironmentService } from '../services/environment/environment.service';
+import { UserDetailPage } from '../pages/user-detail/user-detail.page';
+import { CreateUserPage } from '../pages/create-user/create-user.page';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    UserDetailPage,
+    CreateUserPage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -23,9 +31,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    UserDetailPage,
+    CreateUserPage
   ],
   providers: [
+    EnvironmentService,
+    UserService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
